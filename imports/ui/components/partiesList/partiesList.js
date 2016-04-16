@@ -9,6 +9,8 @@ import { Parties } from '../../../api/parties';
 import { name as PartyAdd } from '../partyAdd/partyAdd';
 import { name as PartyRemove } from '../partyRemove/partyRemove';
 import { name as PartiesSort } from '../partiesSort/partiesSort';
+import { name as PartyAddButton } from '../partyAddButton/partyAddButton';
+
 import { name as PartyCreator } from '../partyCreator/partyCreator';
 import { name as PartyRsvp } from '../partyRsvp/partyRsvp';
 import { name as PartyRsvpsList } from '../partyRsvpsList/partyRsvpsList';
@@ -80,6 +82,8 @@ export default angular.module(name, [
     PartyCreator,
     PartyRsvp,
     PartyRsvpsList,
+    PartyAddButton,
+
 
 
 ]).component(name, {

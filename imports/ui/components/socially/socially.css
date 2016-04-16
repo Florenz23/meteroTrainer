@@ -1,0 +1,90 @@
+socially {
+  display: block;
+}
+navigation {
+  display: block;
+}
+parties-list {
+  display: block;
+  padding: 25px 0;
+}
+parties-list ul.parties {
+  padding-left: 0;
+  list-style-type: none;
+}
+parties-list ul.parties > li {
+  padding: 15px;
+  background-color: #fff;
+  margin: 15px 0;
+  border: 3px solid #eaeaea;
+}
+parties-list ul.parties > li .party-name {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+parties-list ul.parties > li .party-name a {
+  text-decoration: none !important;
+  font-weight: 400;
+}
+parties-list ul.parties > li .party-description {
+  font-weight: 300;
+  padding-left: 18px;
+  font-size: 14px;
+}
+party-add {
+  display: block;
+}
+party-add > form {
+  padding: 15px;
+  margin-bottom: 25px;
+  background-color: #fff;
+  border: 3px solid #EAEAEC;
+}
+party-creator i.fa {
+  margin-left: 5px;
+  margin-right: 10px;
+}
+party-rsvp {
+  display: block;
+  margin: 15px 0;
+}
+.rsvp-sum {
+  width: 160px;
+}
+@media (min-width: 400px) {
+  .rsvp-sum {
+    float: right;
+  }
+}
+@media (max-width: 400px) {
+  .rsvp-sum {
+    margin: 0 auto;
+  }
+}
+.rsvp-sum > .rsvp-amount {
+  display: inline-block;
+  text-align: center;
+  width: 50px;
+}
+.rsvp-sum > .rsvp-amount > .amount {
+  font-weight: bold;
+  font-size: 20px;
+}
+.rsvp-sum > .rsvp-amount > .rsvp-title {
+  font-size: 11px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+party-details {
+  display: block;
+}
+party-details form {
+  margin: 25px 0;
+}
+party-uninvited {
+  display: block;
+}
+party-uninvited ul {
+  padding-left: 0;
+  list-style-type: none;
+}

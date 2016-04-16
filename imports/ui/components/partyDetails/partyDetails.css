@@ -1,0 +1,13 @@
+party-details {
+  display: block;
+}
+party-details form {
+  margin: 25px 0;
+}
+party-uninvited {
+  display: block;
+}
+party-uninvited ul {
+  padding-left: 0;
+  list-style-type: none;
+}

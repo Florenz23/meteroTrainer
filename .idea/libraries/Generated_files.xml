@@ -1,0 +1,97 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/imports/api/parties/methods-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/api/parties/publish-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/partyCreator/partyCreator-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/api/parties/index-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/filters/displayNameFilter-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/partyAdd/client/partyAdd.tests-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/partyUninvited/partyUninvited-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/partyRemove/client/partyRemove.tests-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/stateFilters-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/viewScroll-compiled.js" />
+        <item url="file://$PROJECT_DIR$/server/main-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/view-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/partyRsvp/partyRsvp-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/api/users/users-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/common-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/templateFactory-compiled.js" />
+        <item url="file://$PROJECT_DIR$/server/startup/environment-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/startup/fixtures-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/resolve-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/urlRouter-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-utils-pagination/dirPagination-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/viewDirective-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/partiesSort/partiesSort-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/urlMatcherFactory-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/partyUnanswered/partyUnanswered-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-utils-pagination/index-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/stateDirectives-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-utils-pagination/package-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/state-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap4-webpack-package/source-compiled.js" />
+        <item url="file://$PROJECT_DIR$/client/main-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap4-webpack-package/index-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/underscore/underscore-min-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/underscore/underscore-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/release/angular-ui-router.min-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/bootstrap4-webpack-package/webpack.config-compiled.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/angular-ui-router/release/angular-ui-router-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/partyDetails/partyDetails-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/filters/uninvitedFilter-compiled.js" />
+        <item url="file://$PROJECT_DIR$/imports/ui/components/navigation/navigation-compiled.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/server/startup-compiled.js" />
+      <root url="file://$PROJECT_DIR$/server/startup-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partyRsvpUsers/partyRsvpUsers-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partyRsvpsList/partyRsvpsList-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partyRsvpUsers/partyRsvpUsers-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partyRsvpsList/partyRsvpsList-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/api/parties/methods-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/api/parties/publish-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partyCreator/partyCreator-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/api/parties/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/filters/displayNameFilter-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partyAdd/client/partyAdd.tests-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partyUninvited/partyUninvited-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partyRemove/client/partyRemove.tests-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/stateFilters-compiled.js" />
+      <root url="file://$PROJECT_DIR$/server/main-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/viewScroll-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/view-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partyRsvp/partyRsvp-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/api/users/users-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/common-compiled.js" />
+      <root url="file://$PROJECT_DIR$/server/startup/environment-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/templateFactory-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/startup/fixtures-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/resolve-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-utils-pagination/dirPagination-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/urlRouter-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/viewDirective-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partiesSort/partiesSort-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/urlMatcherFactory-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partyUnanswered/partyUnanswered-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/stateDirectives-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-utils-pagination/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/src/state-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-utils-pagination/package-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap4-webpack-package/source-compiled.js" />
+      <root url="file://$PROJECT_DIR$/client/main-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/underscore/underscore-min-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap4-webpack-package/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/release/angular-ui-router.min-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/underscore/underscore-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/angular-ui-router/release/angular-ui-router-compiled.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/bootstrap4-webpack-package/webpack.config-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/filters/uninvitedFilter-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/partyDetails/partyDetails-compiled.js" />
+      <root url="file://$PROJECT_DIR$/imports/ui/components/navigation/navigation-compiled.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":"AAAA,OAAO,WAAP;AACA,OAAO,WAAP;;AAEA,cAAc,cAAd","file":"index-compiled.js","sourcesContent":["import './publish';\nimport './methods';\n\nexport * from './collection';"]}

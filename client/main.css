@@ -4,9 +4,6 @@ body {
 socially {
   display: block;
 }
-navigation login-buttons {
-  margin-left: 15px;
-}
 parties-list [ui-sref] {
   cursor: pointer;
 }

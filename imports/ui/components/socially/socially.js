@@ -4,8 +4,8 @@ import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
 import './socially.html';
-import { name as PartiesList } from '../party/partiesList/partiesList';
-import { name as PartyDetails } from '../party/partyDetails/partyDetails';
+import { name as Lists } from '../lists/lists';
+import { name as Party } from '../socially/party';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Auth } from '../user/auth/auth';
 
@@ -18,10 +18,9 @@ const name = 'socially';
 export default angular.module(name, [
     angularMeteor,
     ngMaterial,
-    PartiesList,
     uiRouter,
-    PartiesList,
-    PartyDetails,
+    Lists,
+    Party,
     Navigation,
     Auth,
     'accounts.ui'

@@ -3,6 +3,7 @@ body {
 }
 socially {
   display: block;
+  width: 60%;
 }
 parties-list [ui-sref] {
   cursor: pointer;

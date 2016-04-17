@@ -3,16 +3,14 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
-import './socially.html';
+import './party.html';
 import { name as PartiesList } from '../party/partiesList/partiesList';
 import { name as PartyDetails } from '../party/partyDetails/partyDetails';
-import { name as Navigation } from '../navigation/navigation';
-import { name as Auth } from '../user/auth/auth';
 
-class Socially {
+class Party {
 }
 
-const name = 'socially';
+const name = 'party';
 
 // create a module
 export default angular.module(name, [
@@ -22,13 +20,11 @@ export default angular.module(name, [
     uiRouter,
     PartiesList,
     PartyDetails,
-    Navigation,
-    Auth,
     'accounts.ui'
 ]).component(name, {
-    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    templateUrl: `imports/ui/components/socially/${name}/${name}.html`,
     controllerAs: name,
-    controller: Socially
+    controller: Party
 })
     .config(config)
     //redirect not authorized user

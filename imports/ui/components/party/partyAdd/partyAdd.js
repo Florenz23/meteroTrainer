@@ -7,12 +7,15 @@ import './partyAdd.html';
 import { Parties } from '../../../../api/parties';
 
 class PartyAdd {
-    constructor() {
+    constructor($stateParams) {
         this.party = {};
+        this.listId = $stateParams.listId;
     }
 
     submit() {
         this.party.owner = Meteor.user()._id;
+        this.party.listId = this.listId;
+        console.log(this.party);
         Parties.insert(this.party);
         this.reset();
 

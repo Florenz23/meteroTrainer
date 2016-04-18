@@ -84,8 +84,6 @@ export default angular.module(name, [
     PartyRsvpsList,
     PartyAddButton,
 
-
-
 ]).component(name, {
     templateUrl: `imports/ui/components/party/${name}/${name}.html`,
     controllerAs: name,
@@ -96,8 +94,8 @@ export default angular.module(name, [
 function config($stateProvider) {
     'ngInject';
     $stateProvider
-        .state('parties', {
-            url: '/parties',
+        .state('partiesList', {
+            url: '/lists/:listId',
             template: '<parties-list></parties-list>'
         });
 }

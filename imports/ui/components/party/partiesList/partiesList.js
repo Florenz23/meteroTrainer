@@ -17,7 +17,7 @@ import { name as PartyRsvpsList } from '../partyRsvpsList/partyRsvpsList';
 import { name as PartyUnanswered } from '../partyUnanswered/partyUnanswered';
 
 class PartiesList {
-    constructor($scope, $reactive) {
+    constructor($scope, $reactive,$stateParams) {
         'ngInject';
 
         $reactive(this).attach($scope);
@@ -40,7 +40,10 @@ class PartiesList {
 
         this.helpers({
             parties() {
-                return Parties.find({}, {
+                const selector = {
+                    listId : $stateParams.listId
+                };
+                return Parties.find(selector, {
                     sort: this.getReactively('sort')
                 });
             },

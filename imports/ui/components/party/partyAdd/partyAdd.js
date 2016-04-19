@@ -8,6 +8,7 @@ import { Parties } from '../../../../api/parties';
 
 class PartyAdd {
     constructor($stateParams) {
+        'ngInject';
         this.party = {};
         this.listId = $stateParams.listId;
     }

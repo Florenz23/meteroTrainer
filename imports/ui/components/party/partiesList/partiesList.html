@@ -6,7 +6,7 @@
     </div>
 
     <div flex>
-        <h2 class="md-display-1">Party Name:<list-details></list-details><listDetails></listDetails></h2>
+        <h2 class="md-display-1">Party Name:</h2>
     </div>
 
     <div flex layout="row" layout-padding>
@@ -24,10 +24,12 @@
                      total-items="partiesList.partiesCount">
                 <md-card-title>
                     <md-card-title-text>
-            <span class="md-headline" ui-sref="partyDetails({ partyId: party._id })">
-              {{party.name}}
-                <party-remove party="party"></party-remove>
+            <span class="md-headline" ui-sref="partiesList({ listId: party._id})">
+                {{party.name}}
             </span>
+                        <md-icon class="show-detail-button" ui-sref="partyDetails({ partyId: party._id })"
+                                 md-svg-icon="content:ic_add_24px"></md-icon>
+                        <party-remove party="party"></party-remove>
                         <span class="md-subhead">{{party.description}}</span>
                     </md-card-title-text>
                 </md-card-title>

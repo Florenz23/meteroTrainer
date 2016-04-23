@@ -1,6 +1,9 @@
 parties-list [ui-sref] {
   cursor: pointer;
 }
+.show-detail-button {
+  float: right;
+}
 party-remove {
   float: right;
 }

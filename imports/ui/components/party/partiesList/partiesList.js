@@ -16,6 +16,8 @@ import { name as PartyRsvp } from '../partyRsvp/partyRsvp';
 import { name as PartyRsvpsList } from '../partyRsvpsList/partyRsvpsList';
 import { name as PartyUnanswered } from '../partyUnanswered/partyUnanswered';
 
+import { name as DisplayLists } from '../../lists/displayLists/displayLists';
+
 class PartiesList {
     constructor($scope, $reactive,$stateParams) {
         'ngInject';
@@ -41,7 +43,6 @@ class PartiesList {
         this.helpers({
             parties() {
                 const selector = {
-                    listId : $stateParams.listId
                 };
                 return Parties.find(selector, {
                     sort: this.getReactively('sort')
@@ -86,19 +87,10 @@ export default angular.module(name, [
     PartyRsvp,
     PartyRsvpsList,
     PartyAddButton,
+    DisplayLists,
 
 ]).component(name, {
     templateUrl: `imports/ui/components/party/${name}/${name}.html`,
     controllerAs: name,
     controller: PartiesList
-})
-    .config(config);
-
-function config($stateProvider) {
-    'ngInject';
-    $stateProvider
-        .state('partiesList', {
-            url: '/lists/:listId',
-            template: '<parties-list></parties-list>'
-        });
-}
+});

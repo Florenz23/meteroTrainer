@@ -37,7 +37,7 @@ const name = 'partyAdd';
 // create a module
 export default angular.module(name, [
     angularMeteor,
-    uiRouter,
+    uiRouter
 ]).component(name, {
     templateUrl: `imports/ui/components/party/${name}/${name}.html`,
     bindings: {

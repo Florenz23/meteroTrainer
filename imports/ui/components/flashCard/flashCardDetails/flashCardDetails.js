@@ -2,7 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
-import './listDetails.html';
+import './flashCardDetails.html';
 
 class ListDetails {
     constructor($stateParams) {
@@ -12,14 +12,14 @@ class ListDetails {
     }
 }
 
-const name = 'listDetails';
+const name = 'flashCardDetails';
 
 // create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter
 ]).component(name, {
-    templateUrl: `imports/ui/components/lists/${name}/${name}.html`,
+    templateUrl: `imports/ui/components/flashCard/${name}/${name}.html`,
     controllerAs: name,
     controller: ListDetails
 })
@@ -28,8 +28,8 @@ export default angular.module(name, [
 function config($stateProvider) {
     'ngInject';
 
-    $stateProvider.state('listDetails', {
+    $stateProvider.state('flashCardDetails', {
         url: '/lists/:listId',
-        template: '<listDetails></listDetails>'
+        template: '<flashCardDetails></flashCardDetails>'
     });
 }

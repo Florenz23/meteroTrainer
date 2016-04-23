@@ -16,7 +16,7 @@ import { name as PartyRsvp } from '../partyRsvp/partyRsvp';
 import { name as PartyRsvpsList } from '../partyRsvpsList/partyRsvpsList';
 import { name as PartyUnanswered } from '../partyUnanswered/partyUnanswered';
 
-import { name as DisplayLists } from '../../lists/displayLists/displayLists';
+import { name as DisplayFlashCard } from '../../flashCard/displayFlashCard/displayFlashCard';
 
 class PartiesList {
     constructor($scope, $reactive,$stateParams) {
@@ -87,7 +87,7 @@ export default angular.module(name, [
     PartyRsvp,
     PartyRsvpsList,
     PartyAddButton,
-    DisplayLists,
+    DisplayFlashCard,
 
 ]).component(name, {
     templateUrl: `imports/ui/components/party/${name}/${name}.html`,

@@ -3,9 +3,9 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import { Lists } from '../../../../api/lists';
 
-import './listsAdd.html';
+import './flashCardAdd.html';
 
-class ListsAdd {
+class FlashCardAdd {
     constructor($stateParams) {
         'ngInject';
         this.list = {};
@@ -26,14 +26,14 @@ class ListsAdd {
 
 
 
-const name = 'listsAdd';
+const name = 'flashCardAdd';
 
 // create a module
 export default angular.module(name, [
     angularMeteor,
     uiRouter
 ]).component(name, {
-    templateUrl: `imports/ui/components/lists/${name}/${name}.html`,
+    templateUrl: `imports/ui/components/flashCard/${name}/${name}.html`,
     controllerAs: name,
-    controller: ListsAdd
+    controller: FlashCardAdd
 });

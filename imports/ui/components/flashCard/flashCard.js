@@ -3,8 +3,8 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
-import './lists.html';
-import { name as DisplayLists } from '../lists/displayLists/displayLists';
+import './flashCard.html';
+import { name as DisplayLists } from '../flashCard/displayFlashCard/displayFlashCard';
 
 class Lists {
 }

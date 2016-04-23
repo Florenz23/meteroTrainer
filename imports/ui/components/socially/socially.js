@@ -4,7 +4,7 @@ import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
 import './socially.html';
-import { name as Lists } from '../lists/lists';
+import { name as Lists } from '../flashCard/flashCard';
 import { name as Party } from '../socially/party';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Auth } from '../user/auth/auth';

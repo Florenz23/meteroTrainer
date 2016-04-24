@@ -1,0 +1,29 @@
+moin
+<div layout="column" layout-padding>
+    <div layout="column" layout-gt-sm="row"  layout-padding>
+        <form flex="50" layout="column">
+            <md-input-container>
+                <label>Party name</label>
+                <input ng-model="fcListDetails.fcList.name" ng-disabled="!fcListDetails.isLoggedIn">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Description</label>
+                <input ng-model="fcListDetails.fcList.description" ng-disabled="!fcListDetails.isLoggedIn">
+            </md-input-container>
+
+            <div>
+                <md-checkbox ng-model="fcListDetails.fcList.public" ng-disabled="!fcListDetails.isLoggedIn" aria-label="Public Party?">
+                    Public Party?
+                </md-checkbox>
+            </div>
+
+            <div>
+                <md-button ng-click="fcListDetails.save()" class="md-primary md-raised">Save</md-button>
+            </div>
+        </form>
+        <fcList-map flex="50" location="fcListDetails.fcList.location"></fcList-map>
+    </div>
+
+    <fcList-uninvited flex fcList="fcListDetails.fcList" ng-show="fcListDetails.canInvite()"></fcList-uninvited>
+</div>

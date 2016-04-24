@@ -1,0 +1,56 @@
+<div layout="column" layout-padding>
+    <fcList-add-button ng-show="fcListsList.isLoggedIn"></fcList-add-button>
+
+    <div ng-hide="fcListsList.isLoggedIn">
+        <i>Log in to create a fcList!</i>
+    </div>
+
+    <div flex>
+        <h2 class="md-display-1">Party Name:</h2>
+    </div>
+
+    <div flex layout="row" layout-padding>
+        <md-input-container>
+            <label>Search</label>
+            <input ng-model="fcListsList.searchText">
+        </md-input-container>
+
+        <fcLists-sort on-change="fcListsList.sortChanged(sort)" property="name" order="1"></fcLists-sort>
+    </div>
+
+    <div layout="column" layout-gt-sm="row">
+        <div flex="50">
+            <md-card dir-paginate="fcList in fcListsList.fcLists | itemsPerPage: fcListsList.perPage"
+                     total-items="fcListsList.fcListsCount">
+                <md-card-title>
+                    <md-card-title-text>
+            <span class="md-headline" ui-sref="fcListsList({ listId: fcList._id})">
+                {{fcList.name}}
+            </span>
+                        <md-icon class="show-detail-button" ui-sref="fcListDetails({ fcListId: fcList._id })"
+                                 md-svg-icon="content:ic_add_24px"></md-icon>
+                        <fc-list-remove fcList="fcList"></fc-list-remove>
+                        <span class="md-subhead">{{fcList.description}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <fcList-rsvps-list rsvps="fcList.rsvps"></fcList-rsvps-list>
+
+                    <fcList-unanswered fcList="fcList" ng-if="!fcList.public"></fcList-unanswered>
+                    <div ng-if="fcList.public">
+                        Everyone is invited
+                    </div>
+
+                    <fcList-creator fcList="fcList"></fcList-creator>
+                </md-card-content>
+                <md-card-actions>
+                    <fcList-rsvp fcList="fcList" ng-show="fcListsList.isLoggedIn"></fcList-rsvp>
+                    <div ng-hide="fcListsList.isLoggedIn">
+                        <i>Sign in to RSVP for this fcList.</i>
+                    </div>
+                </md-card-actions>
+            </md-card>
+            <dir-pagination-controls on-page-change="fcListsList.pageChanged(newPageNumber)"></dir-pagination-controls>
+        </div>
+    </div>
+</div>

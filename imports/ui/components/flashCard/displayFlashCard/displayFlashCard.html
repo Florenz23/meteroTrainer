@@ -4,9 +4,9 @@
     <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
     <div class="md-list-item-text" layout="column">
         <a ui-sref="fcListsList({ flashCardId: flashCard._id })">
-            <h3>{{flashCard.name}}</h3>
+            <h3>{{flashCard.question}}</h3>
         </a>
-        <h4>{{ flashCard.description }}</h4>
+        <h4>{{ flashCard.answer }}</h4>
         <flash-card-remove flash="flashCard"></flash-card-remove>
     </div>
 </md-list-item>

@@ -4,13 +4,13 @@ body {
 socially {
   display: block;
 }
-parties-list [ui-sref] {
+fcLists-list [ui-sref] {
   cursor: pointer;
 }
 .show-detail-button {
   float: right;
 }
-party-remove {
+fcList-remove {
   float: right;
 }
 .rsvp-sum {
@@ -40,7 +40,7 @@ party-remove {
   color: #aaa;
   text-transform: uppercase;
 }
-party-add-button .md-fab {
+fcList-add-button .md-fab {
   position: fixed;
   right: 15px;
   bottom: 15px;

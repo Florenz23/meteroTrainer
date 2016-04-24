@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
 import './displayFlashCard.html';
-import { Lists } from '../../../../api/lists';
+import { FlashCards } from '../../../../api/flashCards';
 import { name as FlashCardsAdd } from '../flashCardAdd/flashCardAdd';
 import { name as FlashCardRemove } from '../flashCardRemove/flashCardRemove';
 
@@ -14,14 +14,15 @@ class DisplayFlashCard {
 
         this.listId = $stateParams.listId;
         $reactive(this).attach($scope);
-        this.subscribe('lists');
+        this.subscribe('flashCards');
 
         this.helpers({
             flashCards() {
                 const selector = {
                     listId : $stateParams.listId
                 };
-                return Lists.find(selector);
+                var flashCards = FlashCards.find(selector);
+                return flashCards;
             }
         });
     }
@@ -45,7 +46,7 @@ export default angular.module(name, [
 function config($stateProvider) {
     'ngInject';
     $stateProvider
-        .state('partiesList', {
+        .state('fcListsList', {
             url: '/lists/:listId',
             template: '<display-flash-card></display-flash-card>'
         });

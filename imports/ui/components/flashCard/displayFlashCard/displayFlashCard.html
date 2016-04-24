@@ -3,7 +3,7 @@
 <md-list-item class="md-3-line" ng-repeat="flashCard in displayFlashCard.flashCards" ng-click="null">
     <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
     <div class="md-list-item-text" layout="column">
-        <a ui-sref="partiesList({ flashCardId: flashCard._id })">
+        <a ui-sref="fcListsList({ flashCardId: flashCard._id })">
             <h3>{{flashCard.name}}</h3>
         </a>
         <h4>{{ flashCard.description }}</h4>

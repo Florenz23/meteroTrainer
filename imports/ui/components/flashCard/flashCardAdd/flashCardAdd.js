@@ -1,7 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
-import { Lists } from '../../../../api/lists';
+import { FlashCards } from '../../../../api/flashCards';
 
 import './flashCardAdd.html';
 
@@ -15,7 +15,7 @@ class FlashCardAdd {
     submit() {
         this.list.owner = Meteor.user()._id;
         this.list.listId = this.listId;
-        Lists.insert(this.list);
+        FlashCards.insert(this.list);
         this.reset();
     }
 

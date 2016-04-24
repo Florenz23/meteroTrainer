@@ -3,25 +3,28 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
-import './flashCard.html';
-import { name as DisplayFlashCards } from '../flashCard/displayFlashCard/displayFlashCard';
+import './fcList.html';
+import { name as PartiesList } from '../fcList/fcListsList/fcListsList';
+import { name as PartyDetails } from '../fcList/fcListDetails/fcListDetails';
 
-class FlashCards {
+class Party {
 }
 
-const name = 'lists';
+const name = 'fcList';
 
 // create a module
 export default angular.module(name, [
     angularMeteor,
     ngMaterial,
+    PartiesList,
     uiRouter,
-    DisplayFlashCards,
+    PartiesList,
+    PartyDetails,
     'accounts.ui'
 ]).component(name, {
-    templateUrl: `imports/ui/components/${name}/${name}.html`,
+    templateUrl: `imports/ui/components/socially/${name}.html`,
     controllerAs: name,
-    controller: FlashCards
+    controller: Party
 })
     .config(config)
     //redirect not authorized user

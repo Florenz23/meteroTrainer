@@ -2,13 +2,13 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
 import './flashCardRemove.html';
-import { Lists } from '../../../../api/lists';
+import { FlashCards } from '../../../../api/flashCards';
 
 class FlashCardRemove {
     remove() {
         if (this.flash) {
             console.log(this.flash);
-            Lists.remove(this.flash._id);
+            FlashCards.remove(this.flash._id);
         }
     }
 }

@@ -4,8 +4,8 @@ import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
 import './socially.html';
-import { name as Lists } from '../flashCard/flashCard';
-import { name as Party } from '../socially/party';
+import { name as FlashCards } from '../flashCard/flashCard';
+import { name as Party } from '../socially/fcList';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Auth } from '../user/auth/auth';
 
@@ -19,7 +19,7 @@ export default angular.module(name, [
     angularMeteor,
     ngMaterial,
     uiRouter,
-    Lists,
+    FlashCards,
     Party,
     Navigation,
     Auth,
@@ -39,7 +39,7 @@ function config($locationProvider, $urlRouterProvider, $mdIconProvider) {
 
     $locationProvider.html5Mode(true);
 
-    $urlRouterProvider.otherwise('/parties');
+    $urlRouterProvider.otherwise('/fcLists');
     const iconPath =  '/packages/planettraining_material-design-icons/bower_components/material-design-icons/sprites/svg-sprite/';
 
     $mdIconProvider
@@ -67,7 +67,7 @@ function run($rootScope, $state) {
     $rootScope.$on('$stateChangeError',
         (event, toState, toParams, fromState, fromParams, error) => {
             if (error === 'AUTH_REQUIRED') {
-                $state.go('parties');
+                $state.go('fcLists');
             }
         }
     );

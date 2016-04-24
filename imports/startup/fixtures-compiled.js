@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor';
-import { Parties } from '../api/parties';
+import { Parties } from '../api/fcLists';
 
 Meteor.startup(() => {
     if (Parties.find().count() === 0) {
-        const parties = [{
+        const fcLists = [{
             'name': 'Dubstep-Free Zone',
             'description': 'Fast just got faster with Nexus S.'
         }, {
@@ -14,8 +14,8 @@ Meteor.startup(() => {
             'description': 'Leisure suit required. And only fiercest manners.'
         }];
 
-        parties.forEach(party => {
-            Parties.insert(party);
+        fcLists.forEach(fcList => {
+            Parties.insert(fcList);
         });
     }
 });

@@ -1,6 +1,6 @@
 import '../imports/startup/fixtures';
-import '../imports/api/parties';
-import '../imports/api/lists';
+import '../imports/api/fcLists';
+import '../imports/api/flashCards';
 import '../imports/api/users/users';
 
 //# sourceMappingURL=main-compiled.js.map

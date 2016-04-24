@@ -30,7 +30,7 @@ class Login {
                 if (err) {
                     this.error = err;
                 } else {
-                    this.$state.go('partiesList');
+                    this.$state.go('fcListsList');
     }
 })
 );

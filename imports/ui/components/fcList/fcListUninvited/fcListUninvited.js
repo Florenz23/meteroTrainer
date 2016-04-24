@@ -18,13 +18,15 @@ class PartyUninvited {
 
         this.helpers({
             users() {
-                return Meteor.users.find({});
+                var users = Meteor.users.find({}).fetch();
+                console.log(users);
+                return users;
             }
         });
     }
 
     invite(user) {
-        Meteor.call('invite', this.fcList._id, user._id,
+        Meteor.call('invite', this.list._id, user._id,
             (error) => {
                 if (error) {
                     console.log('Oops, unable to invite!');
@@ -48,7 +50,7 @@ export default angular.module(name, [
     templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
     controllerAs: name,
     bindings: {
-        fcList: '<'
+        list: '<'
     },
     controller: PartyUninvited
 });

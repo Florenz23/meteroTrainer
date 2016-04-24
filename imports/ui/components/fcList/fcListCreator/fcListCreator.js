@@ -17,11 +17,11 @@ class PartyCreator {
 
         this.helpers({
             creator() {
-                if (!this.fcList) {
+                if (!this.list) {
                     return '';
                 }
 
-                const owner = this.fcList.owner;
+                const owner = this.list.owner;
 
                 if (Meteor.userId() !== null && owner === Meteor.userId()) {
                     return 'me';
@@ -43,7 +43,7 @@ export default angular.module(name, [
     templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
     controllerAs: name,
     bindings: {
-        fcList: '<'
+        list: '<'
     },
     controller: PartyCreator
 });

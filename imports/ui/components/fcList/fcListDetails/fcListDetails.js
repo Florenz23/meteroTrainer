@@ -80,7 +80,7 @@ function config($stateProvider) {
 
     $stateProvider.state('fcListDetails', {
         url: '/fcLists/:fcListId',
-        template: '<fcList-details></fcList-details>',
+        template: '<fc-list-details></fc-list-details>',
         resolve: {
             currentUser($q) {
                 if (Meteor.userId() === null) {

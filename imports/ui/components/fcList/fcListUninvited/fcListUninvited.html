@@ -3,7 +3,7 @@
 </h4>
 
 <md-list>
-    <md-list-item ng-repeat="user in fcListUninvited.users | uninvitedFilter:fcListUninvited.fcList" ng-click="fcListUninvited.invite(user)">
+    <md-list-item ng-repeat="user in fcListUninvited.users | uninvitedFilter:fcListUninvited.list" ng-click="fcListUninvited.invite(user)">
         <p>{{ user | displayNameFilter }}</p>
     </md-list-item>
     <md-list-item ng-if="(fcListUninvited.users | uninvitedFilter:fcListUninvited.fcList).length <= 0">

@@ -33,7 +33,7 @@ class PartyRsvp {
 
 
     answer(answer) {
-        Meteor.call('rsvp', this.fcList._id, answer, (error) => {
+        Meteor.call('rsvp', this.list._id, answer, (error) => {
             if (error) {
                 console.error('Oops, unable to rsvp!');
             } else {
@@ -44,8 +44,8 @@ class PartyRsvp {
     }
 
     isAnswer(answer) {
-        if (this.fcList) {
-            return !!_.findWhere(this.fcList.rsvps, {
+        if (this.list) {
+            return !!_.findWhere(this.list.rsvps, {
                 user: Meteor.userId(),
                 rsvp: answer
             });
@@ -62,7 +62,7 @@ export default angular.module(name, [
     templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
     controllerAs: name,
     bindings: {
-        fcList: '<'
+        list: '<'
     },
     controller: PartyRsvp
 });

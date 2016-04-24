@@ -53,7 +53,7 @@ function config($stateProvider) {
     $stateProvider
         .state('fcListAdd', {
             url: '/addParty',
-            template: '<fcList-add></fcList-add>'
+            template: '<fc-list-add></fc-list-add>'
         });
 }
 

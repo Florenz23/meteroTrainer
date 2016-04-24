@@ -9,12 +9,12 @@ import { name as DisplayNameFilter } from '../../../filters/displayNameFilter';
 
 class PartyUnanswered {
     getUnanswered() {
-        if (!this.fcList || !this.fcList.invited) {
+        if (!this.list || !this.list.invited) {
             return;
         }
 
-        return this.fcList.invited.filter((user) => {
-                return !_.findWhere(this.fcList.rsvps, { user });
+        return this.list.invited.filter((user) => {
+                return !_.findWhere(this.list.rsvps, { user });
     });
 }
 
@@ -33,7 +33,7 @@ export default angular.module(name, [
     templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
     controllerAs: name,
     bindings: {
-        fcList: '<'
+        list: '<'
     },
     controller: PartyUnanswered
 });

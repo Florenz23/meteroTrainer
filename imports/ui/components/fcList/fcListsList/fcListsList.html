@@ -1,5 +1,5 @@
 <div layout="column" layout-padding>
-    <fcList-add-button ng-show="fcListsList.isLoggedIn"></fcList-add-button>
+    <fc-list-add-button ng-show="fcListsList.isLoggedIn"></fc-list-add-button>
 
     <div ng-hide="fcListsList.isLoggedIn">
         <i>Log in to create a fcList!</i>
@@ -15,7 +15,7 @@
             <input ng-model="fcListsList.searchText">
         </md-input-container>
 
-        <fcLists-sort on-change="fcListsList.sortChanged(sort)" property="name" order="1"></fcLists-sort>
+        <fc-lists-sort on-change="fcListsList.sortChanged(sort)" property="name" order="1"></fc-lists-sort>
     </div>
 
     <div layout="column" layout-gt-sm="row">
@@ -29,22 +29,25 @@
             </span>
                         <md-icon class="show-detail-button" ui-sref="fcListDetails({ fcListId: fcList._id })"
                                  md-svg-icon="content:ic_add_24px"></md-icon>
-                        <fc-list-remove fcList="fcList"></fc-list-remove>
+                        <fc-list-remove list="fcList"></fc-list-remove>
                         <span class="md-subhead">{{fcList.description}}</span>
+                        <a ui-sref="fcListUserInvite({ partyId: fcList._id })">
+                            {{fcList.name}}
+                        </a>
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    <fcList-rsvps-list rsvps="fcList.rsvps"></fcList-rsvps-list>
+                    <fc-list-rsvps-list rsvps="fcList.rsvps"></fc-list-rsvps-list>
 
-                    <fcList-unanswered fcList="fcList" ng-if="!fcList.public"></fcList-unanswered>
+                    <fc-list-unanswered list="fcList" ng-if="!fcList.public"></fc-list-unanswered>
                     <div ng-if="fcList.public">
                         Everyone is invited
                     </div>
 
-                    <fcList-creator fcList="fcList"></fcList-creator>
+                    <fc-list-creator list="fcList"></fc-list-creator>
                 </md-card-content>
                 <md-card-actions>
-                    <fcList-rsvp fcList="fcList" ng-show="fcListsList.isLoggedIn"></fcList-rsvp>
+                    <fc-list-rsvp list="fcList" ng-show="fcListsList.isLoggedIn"></fc-list-rsvp>
                     <div ng-hide="fcListsList.isLoggedIn">
                         <i>Sign in to RSVP for this fcList.</i>
                     </div>

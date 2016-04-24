@@ -4,10 +4,11 @@ import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
 import './fcList.html';
-import { name as PartiesList } from '../fcList/fcListsList/fcListsList';
-import { name as PartyDetails } from '../fcList/fcListDetails/fcListDetails';
+import { name as FcListsList } from '../fcList/fcListsList/fcListsList';
+import { name as FcListDetails } from '../fcList/fcListDetails/fcListDetails';
+import { name as FcListUserInvite } from '../fcList/fcListUserInvite/fcListUserInvite';
 
-class Party {
+class FcList {
 }
 
 const name = 'fcList';
@@ -16,15 +17,16 @@ const name = 'fcList';
 export default angular.module(name, [
     angularMeteor,
     ngMaterial,
-    PartiesList,
+    FcListsList,
     uiRouter,
-    PartiesList,
-    PartyDetails,
+    FcListsList,
+    FcListDetails,
+    FcListUserInvite,
     'accounts.ui'
 ]).component(name, {
     templateUrl: `imports/ui/components/socially/${name}.html`,
     controllerAs: name,
-    controller: Party
+    controller: FcList
 })
     .config(config)
     //redirect not authorized user

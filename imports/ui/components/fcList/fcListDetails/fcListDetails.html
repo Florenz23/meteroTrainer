@@ -1,4 +1,3 @@
-moin
 <div layout="column" layout-padding>
     <div layout="column" layout-gt-sm="row"  layout-padding>
         <form flex="50" layout="column">
@@ -22,8 +21,7 @@ moin
                 <md-button ng-click="fcListDetails.save()" class="md-primary md-raised">Save</md-button>
             </div>
         </form>
-        <fcList-map flex="50" location="fcListDetails.fcList.location"></fcList-map>
     </div>
 
-    <fcList-uninvited flex fcList="fcListDetails.fcList" ng-show="fcListDetails.canInvite()"></fcList-uninvited>
+    <fc-list-uninvited flex list="fcListDetails.fcList" ng-show="fcListDetails.canInvite()"></fc-list-uninvited>
 </div>

@@ -4,10 +4,10 @@ import angularMeteor from 'angular-meteor';
 import './fcListRemove.html';
 import { Parties } from '../../../../api/fcLists';
 
-class PartyRemove {
+class FcListRemove {
   remove() {
-    if (this.fcList) {
-      Parties.remove(this.fcList._id);
+    if (this.list) {
+      Parties.remove(this.list._id);
     }
   }
 }
@@ -20,8 +20,8 @@ export default angular.module(name, [
 ]).component(name, {
   templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
   bindings: {
-    fcList: '<'
+    list: '<'
   },
   controllerAs: name,
-  controller: PartyRemove
+  controller: FcListRemove
 });

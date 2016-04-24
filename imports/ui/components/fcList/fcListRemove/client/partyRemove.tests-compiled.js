@@ -36,4 +36,4 @@ describe('PartyRemove', () => {
   });
 });
 
-//# sourceMappingURL=fcListRemove.tests-compiled.js.map
+//# sourceMappingURL=partyRemove.tests-compiled.js.map

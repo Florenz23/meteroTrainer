@@ -26,7 +26,6 @@ class PartyAdd {
 
     }
 
-
     reset() {
         this.fcList = {};
     }
@@ -41,7 +40,7 @@ export default angular.module(name, [
 ]).component(name, {
     templateUrl: `imports/ui/components/fcList/${name}/${name}.html`,
     bindings: {
-        done: '&?'
+        done: '>'
     },
     controllerAs: name,
     controller: PartyAdd

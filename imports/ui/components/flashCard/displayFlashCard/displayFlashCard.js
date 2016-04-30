@@ -21,7 +21,7 @@ class DisplayFlashCard {
                 const selector = {
                     listId : $stateParams.listId
                 };
-                var flashCards = FlashCards.find(selector);
+                var flashCards = FlashCards.find(selector).fetch();
                 return flashCards;
             }
         });

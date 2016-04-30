@@ -6,7 +6,7 @@ import ngMaterial from 'angular-material';
 import './fcList.html';
 import { name as FcListsList } from '../fcList/fcListsList/fcListsList';
 import { name as FcListDetails } from '../fcList/fcListDetails/fcListDetails';
-import { name as FcListUserInvite } from '../fcList/fcListUserInvite/fcListUserInvite';
+import { name as Trainer } from '../trainer/trainer';
 
 class FcList {
 }
@@ -21,7 +21,7 @@ export default angular.module(name, [
     uiRouter,
     FcListsList,
     FcListDetails,
-    FcListUserInvite,
+    Trainer,
     'accounts.ui'
 ]).component(name, {
     templateUrl: `imports/ui/components/socially/${name}.html`,

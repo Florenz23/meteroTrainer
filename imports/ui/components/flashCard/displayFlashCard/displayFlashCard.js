@@ -6,7 +6,6 @@ import './displayFlashCard.html';
 import { FlashCards } from '../../../../api/flashCards';
 import { name as FlashCardsAdd } from '../flashCardAdd/flashCardAdd';
 import { name as FlashCardRemove } from '../flashCardRemove/flashCardRemove';
-import { name as Trainer } from '../../trainer/trainer';
 
 
 class DisplayFlashCard {
@@ -34,8 +33,7 @@ export default angular.module(name, [
     angularMeteor,
     uiRouter,
     FlashCardsAdd,
-    FlashCardRemove,
-    Trainer
+    FlashCardRemove
 ]).component(name, {
     templateUrl: `imports/ui/components/flashCard/${name}/${name}.html`,
     controllerAs: name,

@@ -6,6 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import { FlashCards } from '../../../api/flashCards';
 import './trainer.html'
 import { Vocab } from './services';
+import { name as DisplayFlashCard } from '../flashCard/displayFlashCard/displayFlashCard';
 
 class Trainer {
     constructor($scope, $reactive, $stateParams) {
@@ -87,6 +88,7 @@ const name = 'trainer';
 export default angular.module(name, [
     angularMeteor,
     uiRouter,
+    DisplayFlashCard
 ]).component(name, {
     templateUrl: `imports/ui/components/${name}/${name}.html`,
     controllerAs: name,

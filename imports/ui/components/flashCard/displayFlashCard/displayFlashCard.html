@@ -2,12 +2,18 @@
 
 <md-list-item class="md-3-line" ng-repeat="flashCard in displayFlashCard.flashCards" ng-click="null">
     <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+
     <div class="md-list-item-text" layout="column">
         <a ui-sref="fcListsList({ flashCardId: flashCard._id })">
             <h3>{{flashCard.question}}</h3>
         </a>
+
+        <p>Right:{{flashCard.right}}
+            Wrong:{{flashCard.wrong}}
+            Rating:{{flashCard.rating}}</p>
         <h4>{{ flashCard.answer }}</h4>
         <flash-card-remove flash="flashCard"></flash-card-remove>
     </div>
 </md-list-item>
+
 

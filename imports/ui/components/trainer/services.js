@@ -1,9 +1,41 @@
+import angular from 'angular';
+import angularMeteor from 'angular-meteor';
+import { Meteor } from 'meteor/meteor';
+
+import { FlashCards } from '../../../api/flashCards';
+
 
 class ClassFlashCard {
     constructor(flashCardObject) {
+        this.id = flashCardObject._id;
         this.question = flashCardObject.question;
         this.answer = flashCardObject.answer;
         this.poolStatus = this.setStartPoolStatus(flashCardObject.poolStatus);
+        this.setRight(flashCardObject);
+        this.setWrong(flashCardObject);
+        this.setRating(flashCardObject);
+    }
+
+    setRight = function (flashCardObject) {
+        if (Number(flashCardObject.right) === flashCardObject.right && flashCardObject.right % 1 === 0) {
+            this.right = flashCardObject.right;
+        } else {
+            this.right = 0;
+        }
+    }
+    setWrong = function (flashCardObject) {
+        if (Number(flashCardObject.wrong) === flashCardObject.wrong && flashCardObject.wrong % 1 === 0) {
+            this.wrong = flashCardObject.wrong;
+        } else {
+            this.wrong = 0;
+        }
+    }
+    setRating = function (flashCardObject) {
+        if (Number(flashCardObject.rating) === flashCardObject.rating && flashCardObject.rating % 1 === 0) {
+            this.rating = flashCardObject.rating;
+        } else {
+            this.rating = 0;
+        }
     }
 
     setStartPoolStatus = function (poolStatus) {
@@ -21,9 +53,30 @@ class ClassFlashCard {
         if (this.poolStatus <= 0) {
             this.poolStatus++;
         }
+        this.updateDbFlashCard();
+        this.right++;
     }
     markAsWrongAnswered = function () {
         this.poolStatus = -1;
+        this.updateDbFlashCard();
+        this.wrong++;
+    }
+    updateDbFlashCard = function(){
+        FlashCards.update({
+            _id: this.id
+        }, {
+            $set: {
+                right: this.right,
+                wrong: this.wrong,
+                rating: this.rating
+            }
+        }, (error) => {
+            if (error) {
+                console.log('Oops, unable to update the flashCard...');
+            } else {
+                console.log('Updated!');
+            }
+        });
     }
 }
 
@@ -33,7 +86,8 @@ var review_interval = 4;
 class ClassVocab {
     constructor() {
     }
-    chargeVocs = function(dbFlashCards){
+
+    chargeVocs = function (dbFlashCards) {
         var flashCards = new Array();
         for (var i = 0; i < dbFlashCards.length; i++) {
             var obj = new ClassFlashCard(dbFlashCards[i]);
@@ -41,7 +95,7 @@ class ClassVocab {
         }
         this.dbFlashCards = flashCards;
     }
-    iniTrainer = function(){
+    iniTrainer = function () {
         this.currentFlashCard = _.first(this.flashCards());
         this.poolSize = pool_size;
         this.reviewIntervall = review_interval;
@@ -114,6 +168,7 @@ class ClassVocab {
         if (flashCard.poolStatus == 1) {
             this.trashFlashCard(flashCard)
             flashCard.markAsCorrectAnswered();
+            console.log(flashCard);
         }
         if (flashCard.poolStatus == 0) {
             this.markForReview(flashCard)

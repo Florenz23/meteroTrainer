@@ -6,22 +6,21 @@ import './displayFlashCard.html';
 import { FlashCards } from '../../../../api/flashCards';
 import { name as FlashCardsAdd } from '../flashCardAdd/flashCardAdd';
 import { name as FlashCardRemove } from '../flashCardRemove/flashCardRemove';
+import { name as Trainer } from '../../trainer/trainer';
 
 
 class DisplayFlashCard {
     constructor($scope, $reactive,$stateParams) {
         'ngInject';
-
         this.listId = $stateParams.listId;
         $reactive(this).attach($scope);
         this.subscribe('flashCards');
-
         this.helpers({
             flashCards() {
                 const selector = {
                     listId : $stateParams.listId
                 };
-                var flashCards = FlashCards.find(selector).fetch();
+                var flashCards = FlashCards.find(selector);
                 return flashCards;
             }
         });
@@ -36,6 +35,7 @@ export default angular.module(name, [
     uiRouter,
     FlashCardsAdd,
     FlashCardRemove,
+    Trainer
 ]).component(name, {
     templateUrl: `imports/ui/components/flashCard/${name}/${name}.html`,
     controllerAs: name,

@@ -8,27 +8,26 @@ import './trainer.html'
 import { Vocab } from './services';
 
 class Trainer {
-    constructor($scope,$reactive,$stateParams) {
+    constructor($scope, $reactive, $stateParams) {
         'ngInject';
         $reactive(this).attach($scope);
         this.subscribe('flashCards');
         this.helpers({
             flashCards() {
                 const selector = {
-                    listId : $stateParams.listId
+                    listId: $stateParams.listId
                 };
                 var flashCards = FlashCards.find(selector).fetch();
                 return flashCards;
-            },
-            iniTrainer(){
-                this.listId = $stateParams.listId;
-                console.log("hahaha"+ this.flashCards);
-                Vocab.init(this.flashCards);
-                this.flashCard = Vocab.currentFlashCard;
-                this.displayAnswer = false;
             }
         });
     }
+    iniTrainer = function(){
+        Vocab.chargeVocs(this.flashCards);
+        Vocab.iniTrainer();
+        this.flashCard = Vocab.currentFlashCard;
+        this.displayAnswer = false;
+    };
 
     seeAnswer = function () {
         this.displayAnswer = true;
@@ -105,4 +104,46 @@ function config($stateProvider) {
 }
 
 
+var dbFlashCardss = [
+    {
+        question: 'one',
+        answer: 'eins',
+        type: 'noun'
+    },
+    {
+        question: 'two',
+        answer: 'zwei',
+        type: 'adjective'
+    },
+    {
+        question: 'three',
+        answer: 'drei',
+        type: 'Adjective'
+    },
+    {
+        question: 'four',
+        answer: 'vier',
+        type: 'Adjective'
+    },
+    {
+        question: 'five',
+        answer: 'fünf',
+        type: 'Adjective'
+    },
+    {
+        question: 'a',
+        answer: 'a',
+        type: 'Adjective'
+    },
+    {
+        question: 'b',
+        answer: 'b',
+        type: 'Adjective'
+    },
+    {
+        question: 'c',
+        answer: 'c',
+        type: 'Adjective'
+    }
+];
 

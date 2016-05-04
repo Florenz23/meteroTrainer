@@ -1,47 +1,4 @@
 
-var dbFlashCardss = [
-    {
-        question: 'one',
-        answer: 'eins',
-        type: 'noun'
-    },
-    {
-        question: 'two',
-        answer: 'zwei',
-        type: 'adjective'
-    },
-    {
-        question: 'three',
-        answer: 'drei',
-        type: 'Adjective'
-    },
-    {
-        question: 'four',
-        answer: 'vier',
-        type: 'Adjective'
-    },
-    {
-        question: 'five',
-        answer: 'fünf',
-        type: 'Adjective'
-    },
-    {
-        question: 'a',
-        answer: 'a',
-        type: 'Adjective'
-    },
-    {
-        question: 'b',
-        answer: 'b',
-        type: 'Adjective'
-    },
-    {
-        question: 'c',
-        answer: 'c',
-        type: 'Adjective'
-    }
-];
-
 class ClassFlashCard {
     constructor(flashCardObject) {
         this.question = flashCardObject.question;
@@ -73,32 +30,33 @@ class ClassFlashCard {
 var pool_size = 4;
 var review_interval = 4;
 
-export const Vocab = {
-    init: function (dbFlashCards) {
+class ClassVocab {
+    constructor() {
+    }
+    chargeVocs = function(dbFlashCards){
         var flashCards = new Array();
         for (var i = 0; i < dbFlashCards.length; i++) {
             var obj = new ClassFlashCard(dbFlashCards[i]);
             flashCards.push(obj);
         }
         this.dbFlashCards = flashCards;
-        console.log("after for"+this.dbFlashCards);
+    }
+    iniTrainer = function(){
         this.currentFlashCard = _.first(this.flashCards());
-        console.log("current"+this.currentFlashCard);
         this.poolSize = pool_size;
         this.reviewIntervall = review_interval;
         this.displayAnswer = false;
-    },
-    flashCards: function () {
+    }
+
+    flashCards = function () {
         return this._flashCards || this.getFlashCards();
-    },
-    getFlashCards: function () {
+    }
+    getFlashCards = function () {
         this._flashCards = this.dbFlashCards;
-        console.log("getFlashCards"+this._flashCards);
-        console.log("db in get flash"+this.dbFlashCards);
         return this._flashCards;
-    },
+    }
     // grab the next flashCard in the list or wrap around to the start
-    nextFlashCard: function () {
+    nextFlashCard = function () {
         if (_.last(this.flashCards()).question == this.currentFlashCard.question) {
             this.currentFlashCard = _.first(this.flashCards());
         } else {
@@ -107,40 +65,40 @@ export const Vocab = {
         }
 
         return this.currentFlashCard;
-    },
-    wordByName: function (name) {
+    }
+    wordByName = function (name) {
         return _.detect(this.flashCards(), function (flashCard) {
             return flashCard.question == name;
         });
-    },
-    trashFlashCard: function () {
+    }
+    trashFlashCard = function () {
         var flashCard = this.currentFlashCard;
         this._flashCards.splice(_.indexOf(this._flashCards, flashCard), 1);
         this.currentFlashCard = _.first(this.flashCards());
-    },
+    }
     // simply move flashCard to end of the list
-    markForLater: function (flashCard) {
+    markForLater = function (flashCard) {
         var flashCards = this.flashCards();
         flashCards.splice(_.indexOf(flashCards, flashCard), 1);
         flashCards.push(flashCard);
-    },
+    }
     // place the flashCard in the middle of the list
-    markForSoon: function () {
+    markForSoon = function () {
         var flashCards = this.flashCards();
         var flashCard = this.currentFlashCard;
         flashCards.splice(_.indexOf(flashCards, flashCard), 1);
         flashCards.splice(parseInt(this.poolSize), 0, flashCard);
         this.currentFlashCard = _.first(this.flashCards());
-    },
-    markForReview: function () {
+    }
+    markForReview = function () {
         var flashCard = this.currentFlashCard;
         var flashCards = this.flashCards();
         var reviewPosition = this.poolSize + this.reviewIntervall;
         flashCards.splice(_.indexOf(flashCards, flashCard), 1);
         flashCards.splice(parseInt(reviewPosition), 0, flashCard);
         this.currentFlashCard = _.first(this.flashCards());
-    },
-    checkAnswer: function (userAnswer) {
+    }
+    checkAnswer = function (userAnswer) {
         var flashCard = this.currentFlashCard;
         var displayAnswer = false;
         if (flashCard.answer == userAnswer) {
@@ -150,8 +108,8 @@ export const Vocab = {
             displayAnswer = true;
         }
         return displayAnswer;
-    },
-    markAnswerAsCorrect: function () {
+    }
+    markAnswerAsCorrect = function () {
         var flashCard = this.currentFlashCard;
         if (flashCard.poolStatus == 1) {
             this.trashFlashCard(flashCard)
@@ -166,14 +124,15 @@ export const Vocab = {
             flashCard.markAsCorrectAnswered();
         }
 
-    },
-    markAnswerAsWrong: function () {
+    }
+    markAnswerAsWrong = function () {
         var flashCard = this.currentFlashCard;
         flashCard.markAsWrongAnswered();
         this.markForSoon(flashCard);
     }
-};
+}
 
+export const Vocab = new ClassVocab();
 
 
 

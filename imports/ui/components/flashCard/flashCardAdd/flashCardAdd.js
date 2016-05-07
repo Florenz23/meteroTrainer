@@ -15,6 +15,10 @@ class FlashCardAdd {
     submit() {
         this.list.owner = Meteor.user()._id;
         this.list.listId = this.listId;
+        this.list.right = 0;
+        this.list.wrong = 0;
+        this.list.rating = 0;
+        this.list.lastRevision = new Date().getTime();
         FlashCards.insert(this.list);
         this.reset();
     }

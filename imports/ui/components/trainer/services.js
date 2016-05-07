@@ -23,12 +23,7 @@ class ClassVocab {
         this.displayAnswer = false;
     }
     sortByImportance = function (a, b) {
-        if (a.importance < b.importance)
-            return -1;
-        else if (a.importance > b.importance)
-            return 1;
-        else
-            return 0;
+        return parseFloat(b.importance) - parseFloat(a.importance);
     }
 
     flashCards = function () {
